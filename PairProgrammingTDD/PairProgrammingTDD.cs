@@ -2,8 +2,10 @@
 
 public class WordArranger
 {
-    public string SortAlphabeticallyByLastLetter(string stringOfWords)
+    public string[] SortAlphabeticallyByLastLetter(string stringOfWords)
     {
-        return "are you how";
+        List<string> splitedWordsList = stringOfWords.Split(" ").ToList();
+        splitedWordsList.Sort((l, r) => new string(l.Reverse().ToArray()).CompareTo(new string(r.Reverse().ToArray())));
+        return splitedWordsList.ToArray();
     }
 }
